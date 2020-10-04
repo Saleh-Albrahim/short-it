@@ -1,8 +1,7 @@
 const express = require('express');
 const UrlModel = require('../models/UrlModel');
 const router = express.Router();
-const shortid = require('shortid');
-shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
+const nanoid = require('nanoid').nanoid;
 const ErrorResponse = require('../utils/errorResponse');
 
 router.get('/', (req, res) => {
@@ -15,18 +14,18 @@ router.post('/url', async (req, res, next) => {
   try {
 
     const original = req.body.original;
-    const shortcut = req.body.shortcut || shortid.generate();
+    const slug = req.body.slug || nanoid(3);
 
     if (!original) {
       return next(new ErrorResponse('الرجاء إرسال الرابط', 400));
     }
 
-    if (await UrlModel.findById(shortcut)) {
+    if (await UrlModel.findById(slug)) {
       return next(new ErrorResponse('هذا الاختصار موجود من قبل', 400));
     }
 
     await UrlModel.create({
-      _id: shortcut,
+      _id: slug,
       originalUrl: original
     });
 
@@ -36,7 +35,7 @@ router.post('/url', async (req, res, next) => {
     if (process.env.NODE_ENV == 'development') {
       shortUrl += ':' + process.env.PORT;
     }
-    shortUrl += '/' + shortcut
+    shortUrl += '/' + slug
 
     res.json({
       success: true,
@@ -52,17 +51,17 @@ router.post('/url', async (req, res, next) => {
   }
 });
 
-router.get('/:shortcut', async (req, res, next) => {
+router.get('/:slug', async (req, res, next) => {
 
   try {
 
-    const shortcut = req.params.shortcut
+    const slug = req.params.slug
 
-    if (!shortcut) {
+    if (!slug) {
       return next(new ErrorResponse('الرجاء إرسال الإختصار', 400));
     }
 
-    const url = await UrlModel.findById(shortcut)
+    const url = await UrlModel.findById(slug)
 
     if (!url) {
       return next(new ErrorResponse('لا يوجد رابط بهذا الإختصار', 404));
