@@ -20,6 +20,10 @@ router.post('/url', async (req, res, next) => {
       return next(new ErrorResponse('الرجاء إرسال الرابط', 400));
     }
 
+    if (slug.length > 24) {
+      return next(new ErrorResponse('لا يمكن ان يحتوي الإختصار على اكثر من 24 حرف', 400));
+    }
+
     if (await UrlModel.findById(slug)) {
       return next(new ErrorResponse('هذا الاختصار موجود من قبل', 400));
     }
