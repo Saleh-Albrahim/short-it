@@ -2,6 +2,7 @@ const express = require('express');
 const UrlModel = require('../models/UrlModel');
 const router = express.Router();
 const shortid = require('shortid');
+shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 const ErrorResponse = require('../utils/errorResponse');
 
 router.get('/', (req, res) => {
@@ -10,7 +11,7 @@ router.get('/', (req, res) => {
   res.json(['😀', '😳', '🙄']);
 });
 
-router.post('/url', async (req, res) => {
+router.post('/url', async (req, res, next) => {
   try {
 
     const original = req.body.original;
@@ -44,14 +45,36 @@ router.post('/url', async (req, res) => {
   }
   catch (e) {
     console.log(e)
+    if (e._message == 'Url validation failed') {
+      return next(new ErrorResponse('الرجاء إرسال رابط صحيح', 400));
+    }
+    return next(new ErrorResponse('مشكلة في السيرفر', 500));
   }
 });
 
-router.get('/:shortcut', (req, res) => {
+router.get('/:shortcut', async (req, res, next) => {
 
-  // TODO: redirect to the original url
+  try {
 
-  res.json(['😀', '😳', '🙄']);
+    const shortcut = req.params.shortcut
+
+    if (!shortcut) {
+      return next(new ErrorResponse('الرجاء إرسال الإختصار', 400));
+    }
+
+    const url = await UrlModel.findById(shortcut)
+
+    if (!url) {
+      return next(new ErrorResponse('لا يوجد رابط بهذا الإختصار', 404));
+    }
+
+    res.redirect(url.originalUrl);
+  }
+  catch (e) {
+    console.log(e)
+    return next(new ErrorResponse(' مشكلة في السيرفر', 500));
+  }
+
 });
 
 module.exports = router;

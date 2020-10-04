@@ -2,10 +2,10 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
+const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
 require('dotenv').config();
 require('colors');
-const middlewares = require('./middlewares');
 
 
 const app = express();
@@ -19,8 +19,8 @@ app.use(express.json());
 
 app.use('/', require('./routes/mainRoute'));
 
-app.use(middlewares.notFound);
-app.use(middlewares.errorHandler);
+// Handle all the errors
+app.use(errorHandler);
 
 const port = process.env.PORT || 5000;
 
