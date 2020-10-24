@@ -4,13 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Bono is a Bootstrap 4 landing page HTML template focused on coming soon pages, working great for new websites, events, product launches or services.">
-    <meta name="author" content="Inovatik">
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
     <meta property="og:site_name" content="" /> <!-- website name -->
     <meta property="og:site" content="" /> <!-- website link -->
     <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
@@ -50,15 +43,9 @@
     <!-- Particles.js Container -->
     <div id="particles-js"></div>
 
-
     <!-- Header -->
     <header class="main">
-
-        <!-- Image Logo -->
-        <!-- <a href="index.html"><img class="logo-image" src="images/logo.svg" alt="alternative"></a> -->
-
         <!-- Text Logo - Use this if you don't have a graphic logo -->
-
 
         <!-- Contact Links -->
         <!-- end of contact links -->
@@ -77,8 +64,15 @@
                 <div class="row my-5">
                     <div class="col">
                         <div class="form-group">
-                            <button type="submit" class="submit-button">إختصار
-                                الرابط</button>
+                            <button id="submit-button">
+                                إختصار الرابط</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-5">
+                    <div class="col">
+                        <div class="form-group">
+                            <input class="form-control text-center d-none" type="link" id="result">
                         </div>
                     </div>
                 </div>
@@ -87,19 +81,19 @@
         <!-- Social Links -->
         <div class="social-container  text-center">
             <span class="fa-stack">
-                <a href="#your-link">
+                <a href="https://twitter.com/_SalehAlbrahim" target="_blank">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-twitter fa-stack-1x"></i>
                 </a>
             </span>
             <span class="fa-stack">
-                <a href="#your-link">
+                <a href="https://github.com/Saleh-Albrahim" target="_blank">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-github fa-stack-1x"></i>
                 </a>
             </span>
             <span class="fa-stack">
-                <a href="#your-link">
+                <a href="https://www.linkedin.com/in/saleh--alibrahim/" target="_blank">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-linkedin fa-stack-1x"></i>
                 </a>
@@ -117,9 +111,8 @@
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
     <script src="js/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
-    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
     <script src="js/particles.min.js"></script> <!-- Particles for background effects -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 
