@@ -8,7 +8,6 @@ const ErrorResponse = require('../utils/errorResponse');
 
 router.post('/', async (req, res, next) => {
   try {
-    console.log("req.body", req.body)
     const link = req.body.link;
 
     const slug = req.body.slug || nanoid(3);
