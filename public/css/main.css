@@ -47,6 +47,18 @@ body{
   box-shadow: none;
 }
 
+#result{
+  width: 650px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  padding: 30px;
+}
+
+#result:focus{
+  border: none;
+  box-shadow: none;
+}
 
 
 .main{

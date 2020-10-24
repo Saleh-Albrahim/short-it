@@ -8,11 +8,12 @@ const ErrorResponse = require('../utils/errorResponse');
 
 router.post('/', async (req, res, next) => {
   try {
+    console.log("req.body", req.body)
+    const link = req.body.link;
 
-    const original = req.body.original;
     const slug = req.body.slug || nanoid(3);
 
-    if (!original) {
+    if (!link) {
       return next(new ErrorResponse('الرجاء إرسال الرابط', 400));
     }
 
@@ -26,7 +27,7 @@ router.post('/', async (req, res, next) => {
 
     await UrlModel.create({
       _id: slug,
-      originalUrl: original
+      originalUrl: link
     });
 
 

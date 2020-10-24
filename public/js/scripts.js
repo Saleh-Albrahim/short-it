@@ -1,9 +1,26 @@
-/* Template: Bono - Coming Soon Page Pack HTML Template
-   Author: Inovatik
-   Created: Feb 2020
-   Description: Custom JS file
-*/
 
+
+function successAlertTimer(msg) {
+	Swal.fire({
+		icon: 'success',
+		title: msg,
+		background: '#fff',
+		timer: 1500,
+		heightAuto: false,
+		showConfirmButton: false,
+	});
+}
+
+function errorAlert(msg) {
+	Swal.fire({
+		icon: 'error',
+		title: msg,
+		heightAuto: false,
+		confirmButtonColor: '#d61880',
+		confirmButtonText: 'المحاولة مرة اخرى',
+		background: '#fff',
+	});
+}
 
 (function ($) {
 	"use strict";
@@ -146,7 +163,7 @@
 
 
 
-	$('#submit-button').on('click', (e) => {
+	$('#submit-button').on('click', async (e) => {
 
 		const link = $('#link').val();
 
@@ -159,6 +176,28 @@
 				background: '#fff',
 			});
 			return;
+		}
+
+		const response = await fetch('/', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify({ link })
+		})
+		try {
+			const data = await response.json();
+			if (data.success) {
+				successAlertTimer(data.message)
+				$('#result').removeClass('d-none');
+				$('#result').val(data.shortUrl);
+			} else {
+				errorAlert(data.message);
+			}
+		}
+		catch (error) {
+			console.log(error);
+			errorAlert('مشكلة في السيرفر');
 		}
 
 
