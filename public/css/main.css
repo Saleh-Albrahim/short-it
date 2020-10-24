@@ -21,20 +21,56 @@
 body{
   font-family: 'Tajawal' !important;
   background-color: white;
+  height: 100vh;
 }
 
-#post-form{
-  font-family: 'Tajawal' !important;
+#logo{
+	position: absolute;
+	top: 5rem;
+	color: #fff;
+	font-weight: 700;
+	font-size: 2.5rem;
+  line-height: 1rem;
+	text-decoration: none;
 }
-.label-control{
-  font-family: 'Tajawal' !important;
- 
+
+#link{
+  width: 650px;
+  font-size: 1.5rem;
+  font-weight: 650;
+  border: none;
+  padding: 20px;
 }
-.form-control-data{
- direction:rtl;
+
+#link:focus{
+  border: none;
+  box-shadow: none;
 }
-.form-control-submit-button{
-  font-family: 'Tajawal' !important;
+
+
+
+.main{
+  display:flex ;
+  justify-content: center ;
+  align-items: center ;
+  height: 100vh;
+}
+
+.submit-button {
+  width: 350px;
+  padding:1rem;
+	border: 0.125rem solid #d61880;
+	border-radius: 1.5rem;
+	background-color: #d61880;
+  color: #ffffff;
+  font-size: 1.5rem;
+	transition: all 0.2s;
+}
+
+.submit-button:hover {
+	border: 0.125rem solid #d61880;
+	background-color: transparent;
+	color: #d61880;
 }
 
 
@@ -45,11 +81,21 @@ body{
 
  /* In case of tablet users: */
 @media screen and (max-width: 991px) {
-
+#link{
+  width: 100%;
+}
+.submit-button {
+  width: 80%;
+}
 }
   /* In case of mobile users: */
 @media screen and (max-width: 700px){
-
+#link{
+  width: 100%;
+}
+.submit-button {
+  width: 80%;
+}
 }
 
 

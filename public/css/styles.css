@@ -340,24 +340,7 @@ input[type='checkbox'] {
 	}
 }
 
-.form-control-submit-button {
-	display: inline-block;
-	width: 100%;
-	height: 3.125rem;
-	border: 0.125rem solid #d61880;
-	border-radius: 1.5rem;
-	background-color: #d61880;
-	color: #ffffff;
-	font: 700 0.875rem/0 "Open Sans", sans-serif;
-	cursor: pointer;
-	transition: all 0.2s;
-}
 
-.form-control-submit-button:hover {
-	border: 0.125rem solid #d61880;
-	background-color: transparent;
-	color: #d61880;
-}
 
 /* Form Success And Error Message Formatting */
 #smsgSubmit.h3.text-center.tada.animated,
@@ -627,19 +610,16 @@ canvas {
 /*********************/
 /*    04. Header     */
 /*********************/
-.header {
-	position: relative;
-	text-align: center;
-}
+/* Header */
 
-.header .logo-image {
+.logo-image {
 	width: 7.125rem;
 	height: 2.75rem;
 	margin-top: 2.5rem;
 	margin-bottom: 1.5rem;
 }
 
-.header .logo-text {
+.logo-text {
 	display: inline-block;
 	margin-top: 3rem;
 	margin-bottom: 1.75rem;
@@ -650,29 +630,29 @@ canvas {
 	text-decoration: none;
 }
 
-.header .contact-container {
+  .contact-container {
 	margin-bottom: 3.5rem;
 }
 
-.header .contact-container .list-unstyled li {
+  .contact-container .list-unstyled li {
 	display: inline-block;
 	margin-right: 0.5rem;
 	margin-left: 0.5rem;
 }
 
-.header .contact-container .list-unstyled a {
+  .contact-container .list-unstyled a {
 	text-decoration: none;
 }
 
-.header .contact-container .list-unstyled .fas {
+  .contact-container .list-unstyled .fas {
 	margin-right: 0.5rem;
 }
 
-.header .countdown {
+  .countdown {
 	margin-bottom: 2.25rem;
 }
 
-.header .countdown #clock .counter-number {
+  .countdown #clock .counter-number {
 	display: inline-block;
 	width: 6.5rem;
 	height: 6.5rem;
@@ -688,83 +668,83 @@ canvas {
 	text-align: center;
 }
 
-.header .countdown #clock .counter-number .timer-text {
+  .countdown #clock .counter-number .timer-text {
 	font-weight: 400;
 	font-size: 0.75rem;
 	line-height: 1rem;
 	text-align: center;
 }
 
-.header h1 {
+  h1 {
 	margin-bottom: 0.75rem;
 	font-size: 2.5rem;
 	line-height: 3.375rem;
 }
 
-.header .p-heading {
+  .p-heading {
 	margin-bottom: 2rem;	
 }
 
-.header form {
+  form {
 	margin-bottom: 8rem;
 }
 
-.header .form-control-input {
+  .form-control-input {
 	padding-left: 1.75rem;
 	border: 1px solid #fff;
 	border-radius: 3.75rem;
 }
 
-.header .checkbox,
-.header .checkbox a {
+  .checkbox,
+  .checkbox a {
 	color: #fff;
 	font-size: 0.875rem;
 	line-height: 1.5rem;
 }
 
-.header input[type='checkbox'] {
+  input[type='checkbox'] {
 	vertical-align: -6%;
 }
 
-.header #smsgSubmit.h3.text-center.hidden {
+  #smsgSubmit.h3.text-center.hidden {
 	margin-bottom: 0;
 }
 
-.header #smsgSubmit.h3.text-center,
-.header #smsgSubmit.h3.text-center.tada.animated {
+  #smsgSubmit.h3.text-center,
+  #smsgSubmit.h3.text-center.tada.animated {
 	margin-bottom: 1rem;
 }
 
-.header .social-container {
+  .social-container {
 	position: absolute;
 	right: 0;
 	bottom: 1rem;
 	left: 0;
 }
 
-.header .fa-stack {
+  .fa-stack {
 	width: 2em;
 	margin-bottom: 0.75rem;
 	margin-right: 0.375rem;
 	font-size: 1.25rem;
 }
 
-.header .social-container .fa-stack:last-child {
+  .social-container .fa-stack:last-child {
 	margin-right: 0;
 }
 
-.header .fa-stack .fa-stack-1x {
+  .fa-stack .fa-stack-1x {
     color: #d61880;
 	transition: all 0.2s ease;
 }
 
-.header .fa-stack .fa-stack-2x {
+  .fa-stack .fa-stack-2x {
 	color: #fff;
 	opacity: 0.8;
 	transition: all 0.2s ease;
 }
 
-.header .fa-stack:hover .fa-stack-2x {
+  .fa-stack:hover .fa-stack-2x {
 	opacity: 1;
 }
 
@@ -776,47 +756,45 @@ canvas {
 @media (min-width: 768px) {
 
 	/* Header */
-	.header {
+	  {
 		position: relative;
 		display: flex;
 		align-items: center;
-		flex-direction: column;
 		justify-content: center;
 		height: 100%;
-		min-height: 50rem;
 		text-align: center;
 	}
 	
-	.header .logo-image {
+	  .logo-image {
 		position: absolute;
 		top: 1.875rem;
 		left: 1rem;
 		margin-top: 0;
 	}
 	
-	.header .logo-text {
+	.logo-text {
 		position: absolute;
 		top: 3rem;
 		margin-top: 0;
 	}
 
-	.header .contact-container {
+	  .contact-container {
 		position: absolute;
 		top: 2.625rem;
 		right: 2rem;
 		margin-bottom: 0;
 	}
 
-	.header .contact-container .list-unstyled li {
+	  .contact-container .list-unstyled li {
 		margin-right: 1rem;
 		margin-left: 0;
 	}
 
-	.header .contact-container .list-unstyled li:last-of-type {
+	  .contact-container .list-unstyled li:last-of-type {
 		margin-right: 0;
 	}
 
-	.header .countdown #clock .counter-number {
+	  .countdown #clock .counter-number {
 		width: 7.75rem;
 		height: 7.75rem;
 		margin-bottom: 0;
@@ -825,32 +803,32 @@ canvas {
 		line-height: 1.5rem;
 	}
 	
-	.header .countdown #clock .counter-number .timer-text {
+	  .countdown #clock .counter-number .timer-text {
 		font-size: 0.875rem;
 		line-height: 1.25rem;
 	}
 
-	.header form {
+	  form {
 		margin-bottom: 0;
 	}
 
-	.header .form-group {
+	  .form-group {
 		display: inline-block;
 		vertical-align: top;
 	}
 	
-	.header .form-group.mail {
+	  .form-group.mail {
 		width: 20rem;
 	}
 
-	.header .form-control-input {
+	  .form-control-input {
 		display: inline-block;
 		width: 20rem;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 	}
 
-	.header .form-control-submit-button {
+	  .form-control-submit-button {
 		display: inline-block;
 		width: 9rem;
 		margin-left: -0.375rem;
@@ -858,7 +836,7 @@ canvas {
 		border-bottom-left-radius: 0;
 	}
 
-	.header .social-container {
+	  .social-container {
 		position: absolute;
 		bottom: 1rem;
 		right: 0;
@@ -892,19 +870,19 @@ canvas {
 
 	
 	/* Header */
-	.header .countdown #clock .counter-number {
+	  .countdown #clock .counter-number {
 		width: 9rem;
 		height: 9rem;
 		padding-top: 3.125rem;
 		font-size: 3.25rem;
 	}
 	
-	.header h1 {
+	  h1 {
 		font-size: 3.5rem;
 		line-height: 4.5rem;
 	}
 
-	.header p {
+	  p {
 		margin-bottom: 0.25rem;	
 	}
 	/* end of header */
