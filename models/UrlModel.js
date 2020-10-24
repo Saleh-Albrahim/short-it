@@ -6,10 +6,11 @@ require('mongoose-type-url');
 const UrlSchema = new mongoose.Schema({
     _id: {
         type: String,
-        required: true,
+        required: true
     },
     originalUrl: {
-        type: mongoose.SchemaTypes.Url, required: true
+        type: mongoose.SchemaTypes.Url,
+        required: true
     }
 });
 

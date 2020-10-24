@@ -1,0 +1,59 @@
+
+/*
+ * Globals
+ */
+
+
+
+/* Links */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+
+
+
+/* Custom default button */
+
+
+
+/*
+ * Base structure
+ */
+body{
+  font-family: 'Tajawal' !important;
+  background-color: white;
+}
+
+#post-form{
+  font-family: 'Tajawal' !important;
+}
+.label-control{
+  font-family: 'Tajawal' !important;
+ 
+}
+.form-control-data{
+ direction:rtl;
+}
+.form-control-submit-button{
+  font-family: 'Tajawal' !important;
+}
+
+
+/*
+ * Media
+ */
+
+
+ /* In case of tablet users: */
+@media screen and (max-width: 991px) {
+
+}
+  /* In case of mobile users: */
+@media screen and (max-width: 700px){
+
+}
+
+
+
+/*
+ * Footer
+ */
