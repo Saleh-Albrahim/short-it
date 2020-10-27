@@ -81,7 +81,7 @@ body{
 }
 
 #submit-button:hover {
-	transform: scale(1.1);
+	transform: scale(0.965);
 }
 
 #submit-button:focus {
