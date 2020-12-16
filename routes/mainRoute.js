@@ -30,7 +30,8 @@ router.post('/', async (req, res, next) => {
     });
 
 
-    let shortUrl = req.protocol + '://' + req.hostname;
+    let shortUrl = req.protocol + '://' + 'www.s-ur.me';
+    console.log("TCL: req.hostname", req.hostname)
 
     if (process.env.NODE_ENV == 'development') {
       shortUrl += ':' + process.env.PORT;
